@@ -3,6 +3,11 @@ variable "project_name" {
   default = "grant-bayerle"
 }
 
+variable "GOOGLE_CREDENTIALS" {
+  type = any
+
+}
+
 variable "region" {
   type    = string
   default = "us-east1"
