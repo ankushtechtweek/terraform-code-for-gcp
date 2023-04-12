@@ -1,4 +1,4 @@
-project_name = "grant-bayerle"
+project_name = "grant-bayerle"   # chnage this project name to gcp project name 
 
 region       =  "us-east1"
 
