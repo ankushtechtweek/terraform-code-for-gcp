@@ -45,4 +45,10 @@ secrets = {
     secret_name  = "ZOOM_TOKEN_ENCRYPTION_KEY1"
     secret_value = "my_secret_value_10"
   }
+
+
+    "ZOOM_TOKEN_ENCRYPTION_KEYASDA" = {
+    secret_name  = "ZOOM_TOKEN_ENCRYPTIONDASDAS"
+    secret_value = "my_secret_value_10"
+  }
 }
