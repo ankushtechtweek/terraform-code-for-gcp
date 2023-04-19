@@ -63,8 +63,8 @@ variable "secrets" {
       secret_name  = "ZOOM_TOKEN_ENCRYPTIONDASDAS"
       secret_value = "my_secret_value_10"
     }
-    "ZOOM_TOKEN_ENCRYPTION_KEYASDA_NEW" = {
-      secret_name  = "ZOOM_TOKEN_ENCRYPTIONDASDAS"
+    "ZOOM_TOKEN_ENCRYPTION_KEYASDA_NEW1" = {
+      secret_name  = "ZOOM_TOKEN_ENCRYPTIONDASDASWSW"
       secret_value = "my_secret_value_10"
     }
   }
