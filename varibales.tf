@@ -1,6 +1,7 @@
 variable "project_name" {
   type    = string
-  default = "grant-bayerle"
+  #default = "grant-bayerle"
+  default = "fortinet"
 }
 
 variable "GOOGLE_CREDENTIALS" {
