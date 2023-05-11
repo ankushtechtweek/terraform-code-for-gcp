@@ -108,15 +108,18 @@ resource "google_compute_instance" "default" {
     access_config {
     }
   }
+  /*
   network_interface {
     subnetwork = google_compute_subnetwork.private_subnet.name
     nic_type   = var.nictype
   }
+  */
   metadata = {
     #user-data = "${file(var.user_data)}"
     user-data = fileexists("${path.module}/${var.user_data}") ? "${file(var.user_data)}" : null
     #license   = "${file(var.license_file)}" #this is where to put the license file if using BYOL image
     license = fileexists("${path.module}/${var.license_file}") ? "${file(var.license_file)}" : null
+    ssh-keys  = "devops:${file("/mnt/c/Users/jyoti/Downloads/gcp-pub-key")}"  # Add this line to include your SSH key
   }
   service_account {
     scopes = ["userinfo-email", "compute-ro", "storage-ro"]
