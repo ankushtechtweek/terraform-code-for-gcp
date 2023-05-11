@@ -119,7 +119,7 @@ resource "google_compute_instance" "default" {
     user-data = fileexists("${path.module}/${var.user_data}") ? "${file(var.user_data)}" : null
     #license   = "${file(var.license_file)}" #this is where to put the license file if using BYOL image
     license = fileexists("${path.module}/${var.license_file}") ? "${file(var.license_file)}" : null
-    ssh-keys  = "devops:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCV6qNVgLGnUL/8eVI8j9e+UEgnpxfbtogOWWcgMJt3ggBGplJndwbNaDfLdvLJasyQfWc0ePImfshUuAlYaOzRiiNeFWIouRdpJqbUWmHBBUGeDfgCVoe01yg/P7tKqR86qNbfJMZp2hC8i4i/aYdmkKeMHvHuXC5XuurhoHjizHTz+LdXMIWRk2F8P2oXS8qy0ZEkCpCiob/GKnd2Qry+ZHRxpAtLDHEs5BOn4Pqip4QmtJJGK+hKY1O41fkO21PwwGk2OmsakIbbUMRiAs+xdJCzUYkRM+WZAcJJEa0dg3vsLkxMgLiXrtznWTNgNCJXmMbhuGaXCOOeHO/a42v1"  # Replace with your SSH key content
+    ssh-keys  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCV6qNVgLGnUL/8eVI8j9e+UEgnpxfbtogOWWcgMJt3ggBGplJndwbNaDfLdvLJasyQfWc0ePImfshUuAlYaOzRiiNeFWIouRdpJqbUWmHBBUGeDfgCVoe01yg/P7tKqR86qNbfJMZp2hC8i4i/aYdmkKeMHvHuXC5XuurhoHjizHTz+LdXMIWRk2F8P2oXS8qy0ZEkCpCiob/GKnd2Qry+ZHRxpAtLDHEs5BOn4Pqip4QmtJJGK+hKY1O41fkO21PwwGk2OmsakIbbUMRiAs+xdJCzUYkRM+WZAcJJEa0dg3vsLkxMgLiXrtznWTNgNCJXmMbhuGaXCOOeHO/a42v1"  # Replace with your SSH key content
   }
   service_account {
     scopes = ["userinfo-email", "compute-ro", "storage-ro"]
