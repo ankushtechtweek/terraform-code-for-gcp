@@ -1,6 +1,11 @@
 
 ##fortinet##
 
+variable "region" {
+  type    = string
+  default = "us-east1"
+}
+
 # GCP zone
 variable "zone" {
   type    = string
