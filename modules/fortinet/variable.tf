@@ -1,4 +1,15 @@
+/*
+variable "image_location" {
+  description = "Project where source image is located"
+  default     = "fortigcp-project-001"
 
+}
+
+variable "image" {
+  description = "Name of Image to use"
+  default     = "fortinet-fgtondemand-646-20210531-001-w-license"
+}
+*/
 ##fortinet##
 
 variable "region" {
@@ -25,6 +36,7 @@ variable "image" {
   type    = string
   default = "projects/fortigcp-project-001/global/images/fortinet-fgtondemand-724-20230201-001-w-license"
 }
+
 # GCP VNIC type
 # either GVNIC or VIRTIO_NET
 variable "nictype" {
@@ -34,7 +46,7 @@ variable "nictype" {
 # GCP instance machine type
 variable "machine" {
   type    = string
-  default = "n1-standard-1"
+  default = "n2-standard-2"
 }
 # VPC CIDR
 variable "vpc_cidr" {
