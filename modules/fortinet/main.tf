@@ -96,7 +96,7 @@ resource "google_compute_instance" "fortinet" {
 
   boot_disk {
     initialize_params {
-      image = var.nictype == "GVNIC" ? google_compute_image.fgtvmgvnic[0].self_link : var.image
+      image = var.nictype == "GVNIC" ? google_compute_image.fortinet[0].self_link : var.image
     }
   }
   attached_disk {
