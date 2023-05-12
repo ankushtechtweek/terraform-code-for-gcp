@@ -1,4 +1,5 @@
 resource "google_compute_image" "fortinet" {
+  count = var.nictype == "VIRTIO_NET" ? 1 : 0
   name  = "fortinet-image"
 
   source_image = var.image
