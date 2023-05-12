@@ -41,8 +41,8 @@ variable "image" {
 # either GVNIC or VIRTIO_NET
 variable "nictype" {
   type    = string
-  #default = "GVNIC"
-  default = "MULTI_IP_SUBNET"
+  default = "GVNIC"
+  
 }
 # GCP instance machine type
 variable "machine" {
