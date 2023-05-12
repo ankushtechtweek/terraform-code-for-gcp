@@ -1,5 +1,4 @@
 resource "google_compute_image" "fortinet" {
-  count = var.nictype == "VirtIO" ? 1 : 0
   name  = "fortinet-image"
 
   source_image = var.image
@@ -92,6 +91,8 @@ resource "google_compute_firewall" "http_firewall" {
     protocol = "tcp"
     ports    = ["80"]
   }
+
+  source_ranges = ["0.0.0.0/0"]  # Allowing traffic from any source IP
 }
 
 resource "google_compute_firewall" "https_firewall" {
@@ -102,6 +103,8 @@ resource "google_compute_firewall" "https_firewall" {
     protocol = "tcp"
     ports    = ["443"]
   }
+
+  source_ranges = ["0.0.0.0/0"]  # Allowing traffic from any source IP
 }
 
 # Create FGTVM compute instance
@@ -115,7 +118,7 @@ resource "google_compute_instance" "fortinet" {
 
   boot_disk {
     initialize_params {
-      image = var.nictype == "VirtIO" ? google_compute_image.fortinet[0].self_link : var.image
+      image = var.nictype == "VIRTIO_NET" ? google_compute_image.fortinet[0].self_link : var.image
     }
   }
   attached_disk {
