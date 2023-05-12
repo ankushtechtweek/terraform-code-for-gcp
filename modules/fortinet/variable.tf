@@ -41,12 +41,12 @@ variable "image" {
 # either GVNIC or VIRTIO_NET
 variable "nictype" {
   type    = string
-  default = "GVNIC"
+  default = "VirtIO"
 }
 # GCP instance machine type
 variable "machine" {
   type    = string
-  default = "n2-standard-2"
+  default = "e2-medium"
 }
 # VPC CIDR
 variable "vpc_cidr" {
