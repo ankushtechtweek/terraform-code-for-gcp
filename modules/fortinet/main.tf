@@ -21,7 +21,7 @@ resource "random_string" "random_name_post" {
 resource "google_compute_disk" "logdisk" {
   name = "log-disk-${random_string.random_name_post.result}"
   size = 30
-  type = "pd-standard"
+  type = "pd-ssd"
   zone = var.zone
 }
 
