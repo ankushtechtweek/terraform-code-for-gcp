@@ -1,5 +1,5 @@
 resource "google_compute_image" "fortinet" {
-  count = var.nictype == "VIRTIO_NET" ? 1 : 0
+  count = var.nictype == "GVNIC" ? 1 : 0
   name  = "fortinet-image"
 
   source_image = var.image
@@ -119,7 +119,7 @@ resource "google_compute_instance" "fortinet" {
 
   boot_disk {
     initialize_params {
-      image = var.nictype == "VIRTIO_NET" ? google_compute_image.fortinet[0].self_link : var.image
+      image = var.nictype == "GVNIC" ? google_compute_image.fortinet[0].self_link : var.image
     }
   }
   attached_disk {
